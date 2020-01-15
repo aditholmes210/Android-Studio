@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuActivity"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_exit"
+        android:layout_width="219dp"
+        android:layout_height="78dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/btn_round"
+        android:onClick="Exit"
+        android:text="Exit"
+        android:textAlignment="center"
+        android:textColor="@color/colorMenu"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.552"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_calc" />
+
+    <Button
+        android:id="@+id/btn_calc"
+        android:layout_width="219dp"
+        android:layout_height="78dp"
+        android:layout_marginTop="232dp"
+        android:background="@drawable/btn_round"
+        android:onClick="Calculate"
+        android:text="Calculate"
+        android:textAlignment="center"
+        android:textColor="@color/colorMenu"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.552"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
