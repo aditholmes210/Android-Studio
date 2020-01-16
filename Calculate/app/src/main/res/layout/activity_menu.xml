@@ -39,4 +39,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/tv_nm"
+        android:layout_width="207dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="64dp"
+        android:textColor="@color/colorMenu"
+        android:textAlignment="center"
+        android:textSize="40sp"
+        android:background="@drawable/tv_receive"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.519"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
