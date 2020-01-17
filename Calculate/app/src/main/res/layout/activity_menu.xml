@@ -11,7 +11,7 @@
         android:id="@+id/btn_exit"
         android:layout_width="219dp"
         android:layout_height="78dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="192dp"
         android:background="@drawable/btn_round"
         android:onClick="Exit"
         android:text="Exit"
@@ -24,10 +24,43 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_calc" />
 
     <Button
+        android:id="@+id/btn_yt"
+        android:layout_width="219dp"
+        android:layout_height="78dp"
+        android:layout_marginTop="364dp"
+        android:background="@drawable/btn_round"
+        android:onClick="Youtube"
+        android:text="@string/btn_yt"
+        android:textAlignment="center"
+        android:textColor="@color/colorMenu"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.552"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_call"
+        android:layout_width="219dp"
+        android:layout_height="78dp"
+        android:layout_marginTop="272dp"
+        android:background="@drawable/btn_round"
+        android:onClick="Call Us"
+        android:text="@string/btn_call"
+        android:textAlignment="center"
+        android:textColor="@color/colorMenu"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.552"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
         android:id="@+id/btn_calc"
         android:layout_width="219dp"
         android:layout_height="78dp"
-        android:layout_marginTop="232dp"
+        android:layout_marginTop="184dp"
         android:background="@drawable/btn_round"
         android:onClick="Calculate"
         android:text="Calculate"

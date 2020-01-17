@@ -5,4 +5,6 @@
     <string name="et_height">Tinggi</string>
     <string name="btn_htg">Hitung</string>
     <string name="tv_hsl">Hasil</string>
+    <string name="btn_call">Call Us</string>
+    <string name="btn_yt">Browser</string>
 </resources>
