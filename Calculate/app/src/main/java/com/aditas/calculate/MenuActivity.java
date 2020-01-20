@@ -54,9 +54,6 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
                 Intent calc = new Intent(getApplicationContext(), VolActivity.class);
                 startActivity(calc);
                 break;
-            case R.id.btn_exit:
-                Snackbar.make(view, "Ketipuu", Snackbar.LENGTH_LONG).show();
-                break;
             case R.id.btn_call:
                 String noHP = "08111856530";
                 Uri tel = Uri.parse("tel:"+noHP);
@@ -67,7 +64,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
                     startActivity(dialContact);
                 }
                 else{
-                    Toast.makeText(this, "Can't make a call", Toast);
+                    Toast.makeText(this, "Can't make a call", Toast.LENGTH_SHORT).show();
                 }
                 break;
             case R.id.btn_yt:
@@ -80,6 +77,9 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
                 if(openWeb.resolveActivity(getPackageManager()) != null){
                     startActivity(openWeb);
                 }
+                break;
+            case R.id.btn_exit:
+                Snackbar.make(view, "Ketipuu", Snackbar.LENGTH_LONG).show();
                 break;
         }
     }
