@@ -12,37 +12,53 @@ import java.util.ArrayList;
 public class Adapt extends FragmentStatePagerAdapter {
     private static ArrayList<String> myTitles;
     private static ArrayList<String> myData;
-    private static int numOfItems;
+    private static ArrayList<CarSpec> mySpec;
+    private static int numOfItems; //jml item di viewpager
 
     public static Adapt newInstance(FragmentManager fm, ArrayList<String> titles, ArrayList<String> data){
         Adapt adapt = new Adapt(fm);
         myTitles = titles;
         myData = data;
-        numOfItems = data.size();
+        numOfItems = data.size(); //set numOfItems as size of data/titles
         return adapt;
     }
 
+    //Overload newInstance() above
+    public static Adapt newInstance(FragmentManager fm, ArrayList<CarSpec> car){
+    Adapt adapt = new Adapt(fm);
+    mySpec = car;
+    numOfItems = car.size();
+    return  adapt;
+    }
+
+
     //Constructor
     public Adapt(FragmentManager fm){
-        super(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        super(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT); //deprecated
     }
 
     @NonNull
     @Override
     public Fragment getItem(int position) {
-        FirstFragment firstFrag = new FirstFragment();
-        SecondFragment sndFrag = new SecondFragment();
+        ArrayList<CarSpec.Carf> text = mySpec.get(position).getData();
 
-        switch (position){
-            case 0:
-                return firstFrag;
-            case 1:
-                return sndFrag;
-            default:
-                return firstFrag;
-        }
+        FirstFragment firstFrag = FirstFragment.newInstance(text); //call newInstance
 
+        return firstFrag;
     }
+//        FirstFragment firstFrag = new FirstFragment();
+//        SecondFragment sndFrag = new SecondFragment();
+
+//        switch (position){
+//            case 0:
+//                return firstFrag;
+//            case 1:
+//                return sndFrag;
+//            default:
+//                return firstFrag;
+//        }
+//
+//    }
 
 //    @Override
 //    public int getCount() {
@@ -76,8 +92,14 @@ public class Adapt extends FragmentStatePagerAdapter {
     @Nullable
     @Override
     public CharSequence getPageTitle(int position){
-        String title = myTitles.get(position);
+        String title = "";
+        try{
+            title = mySpec.get(position).getName();
+        } catch (IndexOutOfBoundsException e){
+            title = "whatever";
+        }
 
         return title;
     }
+
 }
