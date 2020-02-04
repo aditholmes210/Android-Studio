@@ -8,7 +8,11 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -17,9 +21,16 @@ import java.util.ArrayList;
  * A simple {@link Fragment} subclass.
  */
 public class FirstFragment extends Fragment {
+    ListView lvData;
 
-    public static FirstFragment newInstance(ArrayList<CarSpec.Carf> text){
+    private static ArrayList<CarSpec.Carf> items;
+
+    public static FirstFragment newInstance(ArrayList<CarSpec.Carf> data){ //amnbil data dari CarSpec.Carf
         FirstFragment firstFrag = new FirstFragment();
+        Bundle args = new Bundle();
+        args.putParcelableArrayList("text", CarSpec);
+        firstFrag.setArguments(args);
+        items = data;
         return firstFrag;
     }
 
@@ -35,21 +46,39 @@ public class FirstFragment extends Fragment {
 //        return firstFrag;
 //    }
 
-    private TextView textData;
-
+//    private TextView textData;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View rootView =  inflater.inflate(R.layout.fragment_first, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_first, container, false);
+        ListView list =(ListView) rootView.findViewById(R.id.lv_data);
 
-        textData = rootView.findViewById(R.id.text_data);
-        textData.setText(getArguments().getString("text"));
+        ArrayAdapter<CarSpec.Carf> adapter = new ArrayAdapter<CarSpec.Carf>(getActivity(), android.R.layout.simple_list_item_1, items);
+        list.setAdapter(adapter);
+
+        if(getArguments() != null){
+            ArrayList<CarSpec.Carf> crf = getArguments().getParcelableArrayList("text");
+            lvData = rootView.findViewById(R.id.lv_data);
+            UsersAdapter adaptr = new UsersAdapter(getActivity(), crf);
+            lvData.setAdapter(adaptr);
+        }
 
         return rootView;
-       // return inflater.inflate(R.layout.fragment_first, container, false);
     }
+
+//    @Override
+//    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+//                             Bundle savedInstanceState) {
+//        // Inflate the layout for this fragment
+//        View rootView =  inflater.inflate(R.layout.fragment_first, container, false);
+//
+//        textData = rootView.findViewById(R.id.text_data);
+//        textData.setText(getArguments().getString("text"));
+//
+//        return rootView;
+//       // return inflater.inflate(R.layout.fragment_first, container, false);
+//    }
 
 //    public fix(ArrayList<CarSpec.Carf>){
 //

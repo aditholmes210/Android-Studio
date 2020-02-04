@@ -4,18 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FirstFragment"
-    android:background="@color/colorPrimaryDark">
+    android:background="@color/colorWhite">
 
     <!-- TODO: Update blank fragment layout -->
     <ListView
         android:id="@+id/lv_data"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"/>
-    <TextView
-        android:id="@+id/text_data"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="This is first fragment"
-        android:textSize="40dp" />
+
 
 </FrameLayout>

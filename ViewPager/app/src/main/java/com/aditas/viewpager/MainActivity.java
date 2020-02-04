@@ -18,18 +18,18 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager page;
     private Adapt adapt;
     private TabLayout tabSpec;
-//    private ListView lvData;
-//    private ArrayAdapter<String> dataAdapter;
+    private ListView lvData;
+    private ArrayAdapter<String> dataAdapter;
 
-    ArrayList<String> menuTitleData = new ArrayList<>();
-    ArrayList<String> data = new ArrayList<>();
+//    ArrayList<String> menuTitleData = new ArrayList<>();
+//    ArrayList<String> data = new ArrayList<>();
     ArrayList<CarSpec> car = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        lvData = findViewById(R.id.lv_data);
+        lvData = findViewById(R.id.lv_data);
 
 //        generateTitle();
 //        generateData();
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
     private void generateSpec(){
 //        CarSpec spec = new CarSpec("Promo", "Sahara");
         ArrayList<CarSpec.Carf> Mesin = new ArrayList<>();
-        Mesin.add(new CarSpec.Carf("V6 Pentastar 3.6L","3.604cc"));
+        Mesin.add(new CarSpec.Carf("Pentastar 3.6L","3.604cc"));
         Mesin.add(new CarSpec.Carf("V6 3.0L","2.985cc"));
         Mesin.add(new CarSpec.Carf("GME 2.0L","1.995cc"));
 
@@ -79,7 +79,8 @@ public class MainActivity extends AppCompatActivity {
 
 //        car.add(new CarSpec("Harga", "Brute"));
         car.add(new CarSpec("Mesin", Mesin));
-        car.add(new CarSpec("Total", Total));
         car.add(new CarSpec("Fitur", Fitur));
+        car.add(new CarSpec("Total", Total));
+
     }
 }

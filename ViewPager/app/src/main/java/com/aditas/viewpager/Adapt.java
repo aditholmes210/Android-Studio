@@ -10,26 +10,32 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 import java.util.ArrayList;
 
 public class Adapt extends FragmentStatePagerAdapter {
-    private static ArrayList<String> myTitles;
-    private static ArrayList<String> myData;
-    private static ArrayList<CarSpec> mySpec;
+//    private static ArrayList<String> myTitles;
+//    private static ArrayList<String> myData;
+    public static ArrayList<CarSpec> mySpec;
     private static int numOfItems; //jml item di viewpager
+    //private static Context ctx;
 
-    public static Adapt newInstance(FragmentManager fm, ArrayList<String> titles, ArrayList<String> data){
-        Adapt adapt = new Adapt(fm);
-        myTitles = titles;
-        myData = data;
-        numOfItems = data.size(); //set numOfItems as size of data/titles
-        return adapt;
-    }
+//    public static Adapt newInstance(FragmentManager fm, ArrayList<String> titles, ArrayList<String> data){
+//        Adapt adapt = new Adapt(fm);
+//        myTitles = titles;
+//        myData = data;
+//        numOfItems = data.size(); //set numOfItems as size of data/titles
+//        return adapt;
+//    }
 
     //Overload newInstance() above
     public static Adapt newInstance(FragmentManager fm, ArrayList<CarSpec> car){
     Adapt adapt = new Adapt(fm);
     mySpec = car;
     numOfItems = car.size();
+    //ctx = context;
     return  adapt;
     }
+
+//    public void Test(ArrayList<CarSpec> car){
+//        mySpec = car;
+//    }
 
 
     //Constructor

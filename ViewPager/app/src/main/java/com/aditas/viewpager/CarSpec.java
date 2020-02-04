@@ -8,6 +8,8 @@ public class CarSpec {
     private ArrayList<Carf> data;
 
     public static class Carf{
+//        public int harga;
+//        public int nama;
         private String nama;
         private String harga;
 
@@ -15,13 +17,27 @@ public class CarSpec {
             this.nama = nm;
             this.harga = hrg;
         }
+
+        public int getName() {
+
+        }
+
+        public int getHarga() {
+        }
     }
+
+//    public String getName(){
+//        return name;
+//    }
+//    public ArrayList<Carf> getHrg(){
+//        ArrayList<Carf> hrg;
+//        return hrg;
+//    }
 
     public CarSpec(String name, ArrayList<Carf> data){
         this.name = name;
         this.data = data;
     }
-
     public String getName(){
         return name;
     }
