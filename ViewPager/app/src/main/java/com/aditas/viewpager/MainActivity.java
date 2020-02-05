@@ -63,19 +63,19 @@ public class MainActivity extends AppCompatActivity {
     private void generateSpec(){
 //        CarSpec spec = new CarSpec("Promo", "Sahara");
         ArrayList<CarSpec.Carf> Mesin = new ArrayList<>();
-        Mesin.add(new CarSpec.Carf("Pentastar 3.6L","3.604cc"));
-        Mesin.add(new CarSpec.Carf("V6 3.0L","2.985cc"));
-        Mesin.add(new CarSpec.Carf("GME 2.0L","1.995cc"));
+        Mesin.add(new CarSpec.Carf("Pentastar","3.604cc"));
+        Mesin.add(new CarSpec.Carf("V6","2.985cc"));
+        Mesin.add(new CarSpec.Carf("GME","1.995cc"));
 
         ArrayList<CarSpec.Carf> Total = new ArrayList<>();
-        Total.add(new CarSpec.Carf("Sport 2 Door", "1.199.000.000"));
-        Total.add(new CarSpec.Carf("Sport 4 Door", "1.399.000.000"));
-        Total.add(new CarSpec.Carf("Sahara 4 Door","1.499.000.000"));
+        Total.add(new CarSpec.Carf("Sport ", "1.199"));
+        Total.add(new CarSpec.Carf("Sahara ", "1.399"));
+        Total.add(new CarSpec.Carf("Rubicon","1.499"));
 
         ArrayList<CarSpec.Carf> Fitur = new ArrayList<>();
-        Fitur.add(new CarSpec.Carf("Keyless entry", "1.000.000"));
-        Fitur.add(new CarSpec.Carf("Automatic transmission","1.500.000"));
-        Fitur.add(new CarSpec.Carf("Hill start assist","800.000"));
+        Fitur.add(new CarSpec.Carf("Keyless entry", "1.000"));
+        Fitur.add(new CarSpec.Carf("Automatic transmission","1.500"));
+        Fitur.add(new CarSpec.Carf("Hill start assist","800"));
 
 //        car.add(new CarSpec("Harga", "Brute"));
         car.add(new CarSpec("Mesin", Mesin));

@@ -25,10 +25,10 @@ public class FirstFragment extends Fragment {
 
     private static ArrayList<CarSpec.Carf> items;
 
-    public static FirstFragment newInstance(ArrayList<CarSpec.Carf> data){ //amnbil data dari CarSpec.Carf
+    public static FirstFragment newInstance(ArrayList<CarSpec.Carf> data){ //ambil data dari CarSpec.Carf trus masukin ke argument
         FirstFragment firstFrag = new FirstFragment();
         Bundle args = new Bundle();
-        args.putParcelableArrayList("text", CarSpec);
+        args.putParcelableArrayList("text", data);
         firstFrag.setArguments(args);
         items = data;
         return firstFrag;
@@ -60,7 +60,7 @@ public class FirstFragment extends Fragment {
         if(getArguments() != null){
             ArrayList<CarSpec.Carf> crf = getArguments().getParcelableArrayList("text");
             lvData = rootView.findViewById(R.id.lv_data);
-            UsersAdapter adaptr = new UsersAdapter(getActivity(), crf);
+            UserAdapter adaptr = new UserAdapter(getActivity(), crf);
             lvData.setAdapter(adaptr);
         }
 

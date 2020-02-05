@@ -1,5 +1,8 @@
 package com.aditas.viewpager;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.ArrayList;
 
 public class CarSpec {
@@ -7,7 +10,7 @@ public class CarSpec {
     //private String data;
     private ArrayList<Carf> data;
 
-    public static class Carf{
+    public static class Carf implements Parcelable { //implement parcelable ke Carf
 //        public int harga;
 //        public int nama;
         private String nama;
@@ -18,12 +21,41 @@ public class CarSpec {
             this.harga = hrg;
         }
 
-        public int getName() {
-
+        public String getName() {
+            return nama;
         }
 
-        public int getHarga() {
+        public String getHarga() {
+            return harga;
         }
+
+        @Override
+        public int describeContents() {
+            return 0;
+        }
+
+        @Override
+        public void writeToParcel(Parcel dest, int flags) { //masukin data dari Carf ke parcel
+            dest.writeString(this.nama);
+            dest.writeString(this.harga);
+        }
+
+        protected Carf(Parcel in) { //baca data parcel dari Carf
+            this.nama = in.readString();
+            this.harga = in.readString();
+        }
+
+        public static final Parcelable.Creator<Carf> CREATOR = new Parcelable.Creator<Carf>() {
+            @Override
+            public Carf createFromParcel(Parcel source) {
+                return new Carf(source);
+            }
+
+            @Override
+            public Carf[] newArray(int size) {
+                return new Carf[size];
+            }
+        };
     }
 
 //    public String getName(){

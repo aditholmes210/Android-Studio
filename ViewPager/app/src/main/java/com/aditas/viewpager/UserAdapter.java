@@ -14,11 +14,11 @@ import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 
-public class UsersAdapter extends BaseAdapter {
+public class UserAdapter extends BaseAdapter {
     private Context context;
     private ArrayList<CarSpec.Carf> car;
 
-        public UsersAdapter(Context context, ArrayList<CarSpec.Carf> cars) {
+        public UserAdapter(Context context, ArrayList<CarSpec.Carf> cars) {
             this.context = context;
             this.car = cars;
         }

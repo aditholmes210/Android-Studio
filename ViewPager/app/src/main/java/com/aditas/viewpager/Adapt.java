@@ -48,7 +48,7 @@ public class Adapt extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
         ArrayList<CarSpec.Carf> text = mySpec.get(position).getData();
 
-        FirstFragment firstFrag = FirstFragment.newInstance(text); //call newInstance
+        FirstFragment firstFrag = FirstFragment.newInstance(text); //call newInstance & ngambil data text dari arraylist dgn text diatas
 
         return firstFrag;
     }
